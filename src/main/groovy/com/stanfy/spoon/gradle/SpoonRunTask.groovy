@@ -46,6 +46,9 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   /** ADB timeout in ms. */
   int adbTimeout = -1
 
+  /** Instrumentation args as list of key-value strings */
+  List<String> instrumentationArgs
+
   /** Name of the one test to run. */
   String className
 
@@ -95,6 +98,8 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
       }
     }
 
+    LOG.debug("Instrumentation args: $instrumentationArgs")
+
     LOG.debug("No animations: $noAnimations")
 
     LOG.debug("Test size: $testSize")
@@ -109,6 +114,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setOutputDirectory(output)
         .setFailIfNoDeviceConnected(failIfNoDeviceConnected)
         .setDebug(debug)
+        .setInstrumentationArgs(instrumentationArgs)
         .setClassName(className)
         .setMethodName(methodName)
         .setAndroidSdk(project.android.sdkDirectory)

@@ -17,6 +17,9 @@ class SpoonExtension {
   /** Fully qualified name of the test class to be run (e.g. com.example.foo.test.MyTestCase). */
   String className
 
+  /** Instrumentation args as list of key-value strings */
+  List<String> instrumentationArgs
+
   /** Test method to be run. Used when `className` is provided. */
   String methodName
 

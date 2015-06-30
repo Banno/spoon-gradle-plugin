@@ -118,6 +118,7 @@ class SpoonPlugin implements Plugin<Project> {
         debug = config.debug
         ignoreFailures = config.ignoreFailures
         devices = config.devices
+        instrumentationArgs = config.instrumentationArgs
         allDevices = !config.devices
         noAnimations = config.noAnimations
         failIfNoDeviceConnected = config.failIfNoDeviceConnected
